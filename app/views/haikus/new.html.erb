@@ -1,11 +1,22 @@
-<% content_for :title, "New haiku" %>
+<div class="haikubot">
+  <div class="container">
+    <div data-controller="haiku--haiku">
+      <input
+        type="text"
+        data-haiku--haiku-target="input"
+        data-action="keydown->haiku--haiku#addWord"
+        placeholder="Type a word and press Enter"
+      />
 
-<h1>New haiku</h1>
+      <div data-haiku--haiku-target="pills" style="margin-top: 10px;"></div>
 
-<%= render "form", haiku: @haiku %>
-
-<br>
-
-<div>
-  <%= link_to "Back to haikus", haikus_path %>
+      <button
+        data-haiku--haiku-target="button"
+        class="generate-button hidden"
+        data-action="click->haiku--haiku#generateHaiku"
+      >
+        Generate Haiku
+      </button>
+    </div>
+  </div>
 </div>

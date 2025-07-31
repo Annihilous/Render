@@ -1,0 +1,30 @@
+.haikubot {
+  .generate-button {
+    margin-top: 15px;
+  }
+
+  .hidden {
+    display: none !important; /* REMOVE ONCE TAILWIND IS INSTALLED */
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    padding: 4px 10px;
+    border-radius: 16px;
+    background-color: #e0e7ff; /* light blue */
+    font-weight: 500;
+  }
+
+  .remove-pill {
+    margin-left: 6px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    color: #b91c1c; /* red */
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+  }
+}
