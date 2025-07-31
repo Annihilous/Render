@@ -1,0 +1,16 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Haikus" %>
+
+<h1>Haikus</h1>
+
+<div id="haikus">
+  <% @haikus.each do |haiku| %>
+    <%= render haiku %>
+    <p>
+      <%= link_to "Show this haiku", haiku %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New haiku", new_haiku_path %>

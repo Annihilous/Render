@@ -1,0 +1,11 @@
+<% content_for :title, "New haiku" %>
+
+<h1>New haiku</h1>
+
+<%= render "form", haiku: @haiku %>
+
+<br>
+
+<div>
+  <%= link_to "Back to haikus", haikus_path %>
+</div>
