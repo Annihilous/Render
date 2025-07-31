@@ -23,5 +23,11 @@ module Render
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |generate|
+      generate.helper false
+      generate.test_framework nil
+      generate.system_tests nil
+    end
   end
 end
