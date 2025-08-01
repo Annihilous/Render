@@ -1,5 +1,14 @@
 class HaikusController < ApplicationController
+  protect_from_forgery except: :generate
+
   before_action :set_haiku, only: %i[ show edit update destroy ]
+
+  def generate
+    words = params[:words]
+
+    haiku_text = HaikuGenerator.new(words).generate
+    render json: { haiku: haiku_text }
+  end
 
   # GET /haikus or /haikus.json
   def index
