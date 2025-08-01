@@ -57,7 +57,6 @@ export default class HaikuController extends Controller {
     this.errorTarget.textContent = "";
   }
 
-
   generateHaiku() {
     // Compose the haiku title from the three words, joined by spaces
     const title = this.words.join(" ");
