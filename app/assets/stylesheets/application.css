@@ -8,3 +8,15 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+.container {
+  height: 70vh;
+  padding: 2rem;
+  width: 90vw;
+}
+
+.sandbox-item {
+  color: blue;
+  list-style: disc;
+  margin-left: 20px;
+}

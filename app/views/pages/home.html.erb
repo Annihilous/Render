@@ -1,4 +1,13 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="flex-col">
+  <h1 class="text-4xl font-bold">Welcome</h1>
 
-<%= link_to "Haiku", new_haiku_path %>
+  <div class="flex-row mt-6">
+    <ul>
+      <li class="sandbox-item">
+        <%= link_to new_haiku_path, class: "button" do %>
+          Generate a Haiku
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
