@@ -21,7 +21,6 @@ class HaikusController < ApplicationController
 
   # GET /haikus/new
   def new
-    @haiku = Haiku.new
   end
 
   # GET /haikus/1/edit
