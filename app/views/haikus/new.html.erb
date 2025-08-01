@@ -1,0 +1,47 @@
+<div class="haikubot">
+  <h1>Haikubot</h1>
+  <div class="container">
+    <div data-controller="haiku--haiku">
+      <input
+        class="word-input transition-opacity duration-500 ease-in-out opacity-100"
+        data-haiku--haiku-target="input"
+        data-action="keydown->haiku--haiku#addWord"
+        minlength="3"
+        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toLowerCase()"
+        pattern="[A-Za-z]+"
+        placeholder="Type a word and press Enter"
+        title="Letters only. No spaces, numbers, or symbols. Try to use actual words."
+        type="text"
+      />
+
+      <p data-haiku--haiku-target="error" class="error-message opacity-0 transition-opacity ease-in-out"></p>
+
+      <div class="pill-container" data-haiku--haiku-target="pills"></div>
+
+      <div
+        class="haiku-output mt-6 text-center whitespace-pre-line font-serif text-lg text-gray-200"
+        data-haiku--haiku-target="haiku"
+      >
+      </div>
+
+      <div class="submit-button-container">
+        <button
+          class="button submit-button hidden"
+          data-action="click->haiku--haiku#generateHaiku"
+          data-haiku--haiku-target="button"
+        >
+          Generate Haiku
+        </button>
+        </br>
+        <button
+          class="button opacity-0 pointer-events-none mt-4 transition-opacity duration-[3000ms] ease-in-out"
+          data-action="click->haiku--haiku#reset"
+          data-haiku--haiku-target="againButton"
+          type="button"
+        >
+          Again?
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

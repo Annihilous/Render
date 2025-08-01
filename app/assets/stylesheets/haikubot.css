@@ -1,0 +1,104 @@
+.haikubot {
+  h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 12px;
+    text-align: center;
+    color: #2c1a1e;
+  }
+
+  .container {
+    background-color: #2c1a1e;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    color: #fdf6f0;
+    height: 70vh;
+    padding: 2rem;
+    width: 90vw;
+  }
+
+  .error-message {
+    height: 20px;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .hidden {
+    display: none !important; /* REMOVE ONCE TAILWIND IS INSTALLED */
+  }
+
+  .pill {
+    align-items: center;
+    background-color: #f4a261;
+    border-radius: 6px;
+    color: #2c1a1e;
+    cursor: default;
+    display: inline-flex;
+    font-weight: 600;
+    margin-right: 8px;
+    padding: 4px 10px;
+    transition: background-color 0.3s ease;
+    user-select: none;
+    &:hover {
+      background-color: #e07b3f;
+    }
+  }
+
+  .pill-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .remove-pill {
+    background: transparent;
+    border: none;
+    color: #b67070;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-left: 6px;
+  }
+
+  .submit-button-container {
+    text-align: center;
+
+    .button {
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 6px;
+      color: #2c1a1e;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 15px;
+      padding: 10px 20px;
+      text-align: center;
+      user-select: none;
+
+      &:hover {
+        background-color: #2563eb;
+      }
+    }
+  }
+
+  .transition-ease {
+    transition: background-color 0.3s ease;
+  }
+
+  .word-input {
+    background-color: #3a2328;
+    border: 2px solid #5c3a3e;
+    border-radius: 6px;
+    color: #fdf6f0;
+    outline: none;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s, opacity 0.3s ease-in-out;
+    width: 100%;
+
+    &:focus {
+      border-color: #e4bfa1;
+      box-shadow: 0 0 4px #e4bfa1;
+      outline: none;
+    }
+  }
+}
