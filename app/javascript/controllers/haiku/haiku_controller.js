@@ -57,26 +57,33 @@ export default class HaikuController extends Controller {
     this.errorTarget.textContent = "";
   }
 
-  generateHaiku() {
-    // Compose the haiku title from the three words, joined by spaces
+  async generateHaiku() {
     const title = this.words.join(" ");
 
     // Hide the submit button and pills
     this.buttonTarget.classList.add("hidden");
     this.pillsTarget.innerHTML = "";
 
-    // Define filler lines with 5/7/5 syllable pattern
-    const fillerLines = [
-      "Soft whispers in the breeze",
-      "Echoes of the quiet dawn",
-      "Peace blooms silently"
-    ];
+    try {
+      const response = await fetch("/haikus/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+          "X-CSRF-Token": document.querySelector("[name='csrf-token']").content
+        },
+        body: JSON.stringify({ words: this.words })
+      });
 
-    // Compose full haiku text: title on top, then filler lines on new lines
-    const fullHaiku = `${title}\n\n${fillerLines.join("\n")}`;
+      if (!response.ok) throw new Error("Failed to generate haiku.");
 
-    // Clear previous content and start typing animation
-    this.typeHaiku(fullHaiku);
+      const data = await response.json();
+      const fullHaiku = `${title}\n\n${data.haiku}`;
+      this.typeHaiku(fullHaiku);
+    } catch (err) {
+      this.showError("Something went wrong. Try again.");
+      console.error(err);
+    }
   }
 
   removeWord(event) {
