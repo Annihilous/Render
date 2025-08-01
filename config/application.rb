@@ -18,7 +18,7 @@ module Render
 
     # Require .env local varriables
     if Rails.env.development?
-      require 'dotenv'
+      require "dotenv"
       Dotenv.load
     end
 

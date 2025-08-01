@@ -1,8 +1,8 @@
 class HaikuGenerator
   def initialize(words)
-    words = ['winter', 'sadness', 'hope'] if words.empty?
+    words = [ "winter", "sadness", "hope" ] if words.empty?
 
-    @words = Array(words).map(&:strip).join(', ')
+    @words = Array(words).map(&:strip).join(", ")
     @client = OpenAI::Client.new(access_token: ENV["OPEN_AI_API_SECRET"])
   end
 
