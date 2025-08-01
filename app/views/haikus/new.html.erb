@@ -18,13 +18,28 @@
 
       <div class="pill-container" data-haiku--haiku-target="pills"></div>
 
+      <div
+        class="haiku-output mt-6 text-center whitespace-pre-line font-serif text-lg text-gray-200"
+        data-haiku--haiku-target="haiku"
+      >
+      </div>
+
       <div class="submit-button-container">
         <button
-          data-haiku--haiku-target="button"
-          class="submit-button hidden"
+          class="button submit-button hidden"
           data-action="click->haiku--haiku#generateHaiku"
+          data-haiku--haiku-target="button"
         >
           Generate Haiku
+        </button>
+        </br>
+        <button
+          class="button opacity-0 pointer-events-none mt-4 transition-opacity duration-[3000ms] ease-in-out"
+          data-action="click->haiku--haiku#reset"
+          data-haiku--haiku-target="againButton"
+          type="button"
+        >
+          Again?
         </button>
       </div>
     </div>

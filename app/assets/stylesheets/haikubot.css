@@ -59,27 +59,30 @@
     margin-left: 6px;
   }
 
-  .submit-button {
-    background-color: #3b82f6;
-    border: none;
-    border-radius: 6px;
-    color: #2c1a1e;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    margin-top: 15px;
-    padding: 10px 20px;
+  .submit-button-container {
     text-align: center;
-    transition: background-color 0.3s ease;
-    user-select: none;
 
-    &:hover {
-      background-color: #2563eb;
+    .button {
+      background-color: #3b82f6;
+      border: none;
+      border-radius: 6px;
+      color: #2c1a1e;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 15px;
+      padding: 10px 20px;
+      text-align: center;
+      user-select: none;
+
+      &:hover {
+        background-color: #2563eb;
+      }
     }
   }
 
-  .submit-button-container {
-    text-align: center;
+  .transition-ease {
+    transition: background-color 0.3s ease;
   }
 
   .word-input {
