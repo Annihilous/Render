@@ -35,10 +35,11 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console"              # Interactive console on exception pages
+  gem "dotenv-rails"              # Supports local ENV variables
+  gem "web-console"               # Interactive console on exception pages
 end
 
 group :test do
-  gem "capybara"                 # System testing
-  gem "selenium-webdriver"       # Used with Capybara
+  gem "capybara"                  # System testing
+  gem "selenium-webdriver"        # Used with Capybara
 end
