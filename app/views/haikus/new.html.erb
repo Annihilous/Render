@@ -1,22 +1,32 @@
 <div class="haikubot">
+  <h1>Haikubot</h1>
   <div class="container">
     <div data-controller="haiku--haiku">
       <input
-        type="text"
+        class="word-input transition-opacity duration-500 ease-in-out opacity-100"
         data-haiku--haiku-target="input"
         data-action="keydown->haiku--haiku#addWord"
+        minlength="3"
+        oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').toLowerCase()"
+        pattern="[A-Za-z]+"
         placeholder="Type a word and press Enter"
+        title="Letters only. No spaces, numbers, or symbols. Try to use actual words."
+        type="text"
       />
 
-      <div data-haiku--haiku-target="pills" style="margin-top: 10px;"></div>
+      <p data-haiku--haiku-target="error" class="error-message opacity-0 transition-opacity ease-in-out"></p>
 
-      <button
-        data-haiku--haiku-target="button"
-        class="generate-button hidden"
-        data-action="click->haiku--haiku#generateHaiku"
-      >
-        Generate Haiku
-      </button>
+      <div class="pill-container" data-haiku--haiku-target="pills"></div>
+
+      <div class="submit-button-container">
+        <button
+          data-haiku--haiku-target="button"
+          class="submit-button hidden"
+          data-action="click->haiku--haiku#generateHaiku"
+        >
+          Generate Haiku
+        </button>
+      </div>
     </div>
   </div>
 </div>
