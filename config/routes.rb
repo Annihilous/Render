@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :mood_events
   resources :haikus do
     post :generate, on: :collection
   end

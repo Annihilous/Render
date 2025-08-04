@@ -1,0 +1,42 @@
+<%= form_with(model: mood_event, class: "contents") do |form| %>
+  <% if mood_event.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(mood_event.errors.count, "error") %> prohibited this mood_event from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% mood_event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :intensity %>
+    <%= form.number_field :intensity, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": mood_event.errors[:intensity].none?, "border-red-400 focus:outline-red-600": mood_event.errors[:intensity].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :notes %>
+    <%= form.textarea :notes, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": mood_event.errors[:notes].none?, "border-red-400 focus:outline-red-600": mood_event.errors[:notes].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :temperament %>
+    <%= form.number_field :temperament, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": mood_event.errors[:temperament].none?, "border-red-400 focus:outline-red-600": mood_event.errors[:temperament].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": mood_event.errors[:title].none?, "border-red-400 focus:outline-red-600": mood_event.errors[:title].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :when_it_happened_was %>
+    <%= form.datetime_field :when_it_happened_was, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": mood_event.errors[:when_it_happened_was].none?, "border-red-400 focus:outline-red-600": mood_event.errors[:when_it_happened_was].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

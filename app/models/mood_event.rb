@@ -1,0 +1,2 @@
+class MoodEvent < ApplicationRecord
+end
