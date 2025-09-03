@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "importmap-rails"               # Use JavaScript with ESM import maps
 gem "jbuilder"                      # Build JSON APIs with ease
 gem "ruby-openai"                   # OpenAPI
-gem "pg", "~> 1.1"                  # PostgreSQL for Active Record
+gem "pg", "~> 1.6"                  # PostgreSQL for Active Record
 gem "propshaft"                     # Modern asset pipeline
 gem "puma", ">= 5.0"                # Puma web server
 gem "rails", "~> 8.0.2"             # Main Rails gem
