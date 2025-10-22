@@ -7,7 +7,7 @@ gem "ruby-openai"                   # OpenAPI
 gem "pg", "~> 1.1"                  # PostgreSQL for Active Record
 gem "propshaft"                     # Modern asset pipeline
 gem "puma", ">= 5.0"                # Puma web server
-gem "rails", "~> 8.0.2"             # Main Rails gem
+gem "rails", "~> 8.1.0"             # Main Rails gem
 gem "solid_cache"                   # Database-backed cache
 gem "solid_cable"                   # Database-backed Action Cable
 gem "solid_queue"                   # Database-backed Active Job
